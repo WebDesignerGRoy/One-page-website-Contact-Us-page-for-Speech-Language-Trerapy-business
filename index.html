@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Voices Speech & Language Therapy | Helping Children Find Their Voice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #5B7FDE;
+            --primary-dark: #3D5FC0;
+            --secondary: #7B68EE;
+            --accent: #FF7E67;
+            --text-dark: #2C3E50;
+            --text-light: #6C757D;
+            --bg-light: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --border: #E9ECEF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1700px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 60px 5%;
+            background: linear-gradient(135deg, rgba(91, 127, 222, 0.1) 0%, rgba(123, 104, 238, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(91, 127, 222, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 450px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-list i {
+            color: var(--secondary);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .service-card a:hover {
+            color: var(--primary-dark);
+        }
+
+        .service-card a i {
+            margin-left: 5px;
+        }
+
+        /* Who We Help Section */
+        .who-help {
+            background: var(--bg-light);
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .help-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .help-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(91, 127, 222, 0.15);
+        }
+
+        .help-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .help-card p {
+            color: var(--text-light);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            position: relative;
+            background: linear-gradient(135deg, rgba(91, 127, 222, 0.05) 0%, rgba(123, 104, 238, 0.05) 100%);
+        }
+
+        .why-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .why-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .why-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .why-points {
+            margin-top: 2rem;
+        }
+
+        .why-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-point i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            margin-top: 5px;
+        }
+
+        .why-point-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .why-point-content p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--bg-light);
+        }
+
+        .testimonial-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.1;
+            font-family: serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(91, 127, 222, 0.05) 0%, rgba(123, 104, 238, 0.05) 100%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            margin-top: 5px;
+        }
+
+        .contact-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item-content p {
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 5%;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-container,
+            .about-container,
+            .why-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 40px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .testimonial-slider {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-comments"></i>
+                Little Voices
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#who-help">Who We Help</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1>Helping Children <span>Find Their Voice</span></h1>
+                <p>Professional speech and language therapy services tailored to your child's unique needs in a warm, supportive environment.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="https://z-cdn-media.chatglm.cn/files/04fa6639-0c23-487a-ac11-917b015da030.jpeg?auth_key=1871868498-34c0709b1a8449bf90a9b5dfc1289ec3-0-8cf0292099765e9e0f482fc6df69d284" alt="Child engaged in speech therapy session">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-title fade-in">
+            <h2>About Little Voices</h2>
+            <p>Dedicated to helping children communicate confidently and effectively through personalized speech and language therapy</p>
+        </div>
+        <div class="about-container">
+            <div class="about-image fade-in">
+                <img src="https://z-cdn-media.chatglm.cn/files/c547646d-92ec-4714-8ddd-cb39eaa22148.jpeg?auth_key=1871868498-d7ed5c4ea8224225bd57f72fc639e532-0-82610370f8fb2add239a7560efe60b87" alt="Therapy session with child">
+            </div>
+            <div class="about-content fade-in">
+                <h3>Creating Confident Communicators</h3>
+                <p>At Little Voices, we specialize in providing comprehensive speech and language therapy services for children of all ages. Our approach is centered around creating a fun, engaging, and supportive environment where children can develop their communication skills at their own pace.</p>
+                <p>With over 10 years of experience, our certified speech-language pathologists are dedicated to helping each child reach their full potential through evidence-based practices tailored to individual needs.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Certified Speech-Language Pathologists</li>
+                    <li><i class="fas fa-check-circle"></i> Evidence-Based Therapy Approaches</li>
+                    <li><i class="fas fa-check-circle"></i> Personalized Treatment Plans</li>
+                    <li><i class="fas fa-check-circle"></i> Family-Centered Care</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-title fade-in">
+            <h2>Our Services</h2>
+            <p>Comprehensive speech and language therapy services designed to meet your child's specific needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3>Language Therapy</h3>
+                <p>Helping children develop vocabulary, sentence structure, and comprehension skills through engaging activities and games.</p>
+                <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h3>Articulation Therapy</h3>
+                <p>Supporting children in producing speech sounds correctly to improve clarity and intelligibility of their speech.</p>
+                <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Social Communication</h3>
+                <p>Building skills for conversation, understanding social cues, and developing meaningful peer relationships.</p>
+                <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Literacy Support</h3>
+                <p>Strengthening pre-reading and reading skills through phonological awareness and language-based activities.</p>
+                <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Cognitive-Communication</h3>
+                <p>Developing attention, memory, problem-solving, and executive functioning skills that support communication.</p>
+                <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Parent Coaching</h3>
+                <p>Empowering parents with strategies and techniques to support their child's communication development at home.</p>
+                <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Help Section -->
+    <section id="who-help" class="who-help">
+        <div class="section-title fade-in">
+            <h2>Who We Help</h2>
+            <p>Our specialized services support children with various communication challenges</p>
+        </div>
+        <div class="help-grid">
+            <div class="help-card fade-in">
+                <h3>Late Talkers</h3>
+                <p>Children who are developing vocabulary and language skills later than their peers</p>
+            </div>
+            <div class="help-card fade-in">
+                <h3>Articulation Disorders</h3>
+                <p>Children who have difficulty producing speech sounds correctly</p>
+            </div>
+            <div class="help-card fade-in">
+                <h3>Language Disorders</h3>
+                <p>Children who struggle with understanding or using language effectively</p>
+            </div>
+            <div class="help-card fade-in">
+                <h3>Autism Spectrum</h3>
+                <p>Children on the autism spectrum who need support with social communication</p>
+            </div>
+            <div class="help-card fade-in">
+                <h3>Stuttering</h3>
+                <p>Children who experience disruptions in the flow of their speech</p>
+            </div>
+            <div class="help-card fade-in">
+                <h3>Reading Difficulties</h3>
+                <p>Children who struggle with reading and literacy skills</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="section-title fade-in">
+            <h2>Why Choose Little Voices</h2>
+            <p>What sets us apart in supporting your child's communication journey</p>
+        </div>
+        <div class="why-container">
+            <div class="why-image fade-in">
+                <img src="https://z-cdn-media.chatglm.cn/files/f5e685ee-7f33-4a64-82cb-cf7ddb9215a5.jpeg?auth_key=1871868498-d228f2fdd84c41369ac40c8e2e0943a9-0-e16d3a66660a5585f5081cacd35573d0" alt="Child engaged in therapy activity" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
+            <div class="why-content fade-in">
+                <h3>Excellence in Speech Therapy</h3>
+                <p>At Little Voices, we're committed to providing the highest quality speech and language therapy services that make a real difference in children's lives.</p>
+                
+                <div class="why-points">
+                    <div class="why-point">
+                        <i class="fas fa-heart"></i>
+                        <div class="why-point-content">
+                            <h4>Child-Centered Approach</h4>
+                            <p>We create a warm, welcoming environment where children feel safe to explore and develop their communication skills through play and engaging activities.</p>
+                        </div>
+                    </div>
+                    <div class="why-point">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="why-point-content">
+                            <h4>Expert Therapists</h4>
+                            <p>Our certified speech-language pathologists have specialized training and extensive experience working with children of all ages and communication needs.</p>
+                        </div>
+                    </div>
+                    <div class="why-point">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="why-point-content">
+                            <h4>Measurable Progress</h4>
+                            <p>We set clear goals and regularly track progress to ensure your child is making meaningful improvements in their communication abilities.</p>
+                        </div>
+                    </div>
+                    <div class="why-point">
+                        <i class="fas fa-users"></i>
+                        <div class="why-point-content">
+                            <h4>Family Involvement</h4>
+                            <p>We believe in partnering with families, providing you with strategies and support to continue therapy goals at home.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-title fade-in">
+            <h2>Success Stories</h2>
+            <p>Hear from families whose children have found their voice with Little Voices</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-content">
+                    "The transformation in our son's communication has been remarkable. He went from being reluctant to speak to confidently expressing himself. The therapist's patience and creativity made all the difference."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SJ</div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Parent of 5-year-old</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-content">
+                    "Little Voices has been a game-changer for our daughter. The personalized approach and fun activities kept her engaged and excited about therapy. We're so grateful for the progress she's made."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MC</div>
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>Parent of 7-year-old</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-content">
+                    "The parent coaching sessions were invaluable. We learned practical strategies to support our child's communication at home, which has accelerated her progress beyond our expectations."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AP</div>
+                    <div class="author-info">
+                        <h4>Amanda Patel</h4>
+                        <p>Parent of 4-year-old</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-title fade-in">
+            <h2>Get in Touch</h2>
+            <p>Ready to help your child find their voice? Contact us today to schedule a consultation</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <h3>Let's Start the Journey Together</h3>
+                <p>We're here to answer your questions and discuss how we can support your child's communication development. Reach out to us through any of the following methods:</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-item-content">
+                        <h4>Phone</h4>
+                        <p>(123) 456-7890</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-item-content">
+                        <h4>Email</h4>
+                        <p>info@littlevoices.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-item-content">
+                        <h4>Location</h4>
+                        <p>123 Therapy Lane, Children's Building<br>Suite 200, Anytown, ST 12345</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="contact-item-content">
+                        <h4>Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form fade-in">
+                <h3>Request a Consultation</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Parent/Guardian Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="child-name">Child's Name</label>
+                        <input type="text" id="child-name" name="child-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="child-age">Child's Age</label>
+                        <input type="text" id="child-age" name="child-age" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="concerns">Primary Concerns</label>
+                        <select id="concerns" name="concerns" required>
+                            <option value="">Please select...</option>
+                            <option value="language">Language Development</option>
+                            <option value="articulation">Articulation/Speech Sounds</option>
+                            <option value="social">Social Communication</option>
+                            <option value="stuttering">Stuttering/Fluency</option>
+                            <option value="literacy">Literacy/Reading</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" placeholder="Please tell us about your child's communication needs..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Little Voices</h3>
+                <p>Helping children find their voice through professional speech and language therapy services.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#who-help">Who We Help</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p>123 Therapy Lane, Children's Building<br>Suite 200, Anytown, ST 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@littlevoices.com</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Little Voices Speech & Language Therapy. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, this would submit the form to a server
+            // For this demo, we'll just show a success message
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message
+            const formContainer = document.querySelector('.contact-form');
+            formContainer.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Thank You!</h3>
+                    <p>Your consultation request has been received. We'll contact you within 24 hours to schedule your appointment.</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem;" onclick="location.reload()">Submit Another Request</button>
+                </div>
+            `;
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
